@@ -20,11 +20,6 @@ public class InteractionAreaController : MonoBehaviour
     private int lengh;
     private condensedChemicalElement[] containedElements = new condensedChemicalElement[100];
 
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -37,8 +32,15 @@ public class InteractionAreaController : MonoBehaviour
 
         for (int i = 0; i < lengh; i++) 
         {
-            reaction = reaction + $"{containedElements[i].quantity}({containedElements[i].Element.formula})";
-
+            if (containedElements[i].quantity > 1) 
+            {
+                reaction = reaction + $"{containedElements[i].quantity}({containedElements[i].Element.formula})";
+            }
+            else 
+            {
+                reaction = reaction + $"{containedElements[i].Element.formula}";
+            }
+            
             if (i != lengh - 1) reaction = reaction + " + ";
         }
 
@@ -118,6 +120,8 @@ public class InteractionAreaController : MonoBehaviour
             }
         }    
 
+        containedElements[lengh] = new condensedChemicalElement();
+
         containedElements[lengh].id = id;
         containedElements[lengh].quantity = 1;
         containedElements[lengh].Element = Element;
@@ -148,19 +152,19 @@ public class InteractionAreaController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision collision) 
+    void OnTriggerEnter(Collider obj) 
     {
-        if (collision.gameObject.layer == ChemicalElementsLayer)
+        if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obj.gameObject.layer)))
         {
-            addChemicalElement (collision.gameObject.GetComponent<ChemicalElement>().id, collision.gameObject.GetComponent<ChemicalElement>());
+            addChemicalElement (obj.gameObject.GetComponent<ChemicalElement>().id, obj.gameObject.GetComponent<ChemicalElement>());
         }
     }
 
-    void OnCollisionExit(Collision collision) 
-    {
-        if (collision.gameObject.layer == ChemicalElementsLayer)
+    void OnTriggerExit(Collider obj) 
+    {  
+        if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obj.gameObject.layer)))
         {
-            removeChemicalElement (collision.gameObject.GetComponent<ChemicalElement>().id);
+            removeChemicalElement (obj.gameObject.GetComponent<ChemicalElement>().id);
         }
     }
 }

@@ -13,6 +13,6 @@ public class ChemicalElement : MonoBehaviour
 
     void Start () 
     {
-        elementdName.text = nume;
+        elementdName.text = formula;
     }
 }

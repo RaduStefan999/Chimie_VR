@@ -20,7 +20,7 @@ public class PlantsGUI : MonoBehaviour
 
     public GameObject InfoArea;
 
-    public LessonInfo Info;
+    //public LessonInfo Info;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +31,9 @@ public class PlantsGUI : MonoBehaviour
 
             plantButons[i].onClick.AddListener(() => {
 
-                DisplayedTitle.text = Info.plantElements[index].Name;
-                DisplayedText.text = Info.plantElements[index].Information;
-                DisplayedImage.texture = Info.plantElements[index].Image;
+                //DisplayedTitle.text = Info.plantElements[index].Name;
+                //DisplayedText.text = Info.plantElements[index].Information;
+                //DisplayedImage.texture = Info.plantElements[index].Image;
 
                 if (!InfoArea.activeSelf) {
                     InfoArea.SetActive(true);

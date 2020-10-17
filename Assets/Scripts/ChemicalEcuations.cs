@@ -4,7 +4,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "LessonInfoData", menuName = "LIIS/Crete Lesson Data")]
 
-public class LessonInfo : ScriptableObject
+public class ChemicalEquations : ScriptableObject
 {
-    public PlantElement[] plantElements;
+    public ChemicalEquation[] Equations;
 }

@@ -59,9 +59,9 @@ public class ContinuousMovement : MonoBehaviour
         verticalScale.x = Mathf.Clamp(verticalScale.x, 1f, 3f);
         verticalScale.y = Mathf.Clamp(verticalScale.y, 1f, 3f);
         verticalScale.z = Mathf.Clamp(verticalScale.z, 1f, 3f);
-        
-        cameraOffset.transform.localScale = verticalScale;
 
+        cameraOffset.transform.localScale = verticalScale;
+/*
         //gravity
         if (isGrounded) {
             fallingSpeed = 0;
@@ -71,7 +71,7 @@ public class ContinuousMovement : MonoBehaviour
         }
         
         character.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
-    }
+ */   }
 
     void CapsuleFollowHeadset() 
     {

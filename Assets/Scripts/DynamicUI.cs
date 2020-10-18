@@ -2,14 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Label : MonoBehaviour
+public class DynamicUI : MonoBehaviour
 {
-    //Gameobject towards Label is pointing
-    public GameObject pointingTo;
-
-    //Arrow Specifics
-    public Material ArrowMaterial;
-    public float width;
 
 
     private Camera MainCamera;
@@ -18,17 +12,7 @@ public class Label : MonoBehaviour
     //Coordonates
     private Vector3[] label_coordonates;
     private Vector3 labelCenter_coordonates;
-    private Vector3 pointingTo_coordonates;
-    private Vector3 pointingFrom_coordonates;
 
-
-    void DefineArrow() 
-    {
-        LineRenderer Arrow = gameObject.AddComponent<LineRenderer>();
-
-        Arrow.material = ArrowMaterial;
-        Arrow.widthMultiplier = width;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,39 +20,19 @@ public class Label : MonoBehaviour
         MainCamera = Camera.main;
         labelRect = this.GetComponent<RectTransform>();
         label_coordonates = new Vector3[4];
-
-        DefineArrow();
     }
 
     // Update is called once per frame
     void Update()
     {
         GetCoordonates();
-        DrawLabelArrow();
         LabelFaceCamera();
     }
 
     void GetCoordonates() 
     {
-        pointingTo_coordonates = pointingTo.transform.position;
 
         labelRect.GetWorldCorners(label_coordonates);
-
-        //Get Closest Label Corner
-
-        float closestDistance = Vector3.Distance(label_coordonates[0], pointingTo_coordonates);
-        pointingFrom_coordonates = label_coordonates[0];
-
-        for (var i = 0; i < 4; i++) 
-        {
-            float distance = Vector3.Distance(label_coordonates[i], pointingTo_coordonates);
-
-            if (distance < closestDistance) 
-            {
-                closestDistance = distance;
-                pointingFrom_coordonates = label_coordonates[i];
-            }
-        }
 
         //Get Label Center
 
@@ -84,17 +48,6 @@ public class Label : MonoBehaviour
         labelCenter_coordonates.x = labelCenter_coordonates.x / 4;
         labelCenter_coordonates.y = labelCenter_coordonates.y / 4;
         labelCenter_coordonates.z = labelCenter_coordonates.z / 4;
-    }
-
-    void DrawLabelArrow() 
-    {
-        LineRenderer Arrow = GetComponent<LineRenderer>();
-
-        var points = new Vector3[2];
-        points[0] = pointingFrom_coordonates;
-        points[1] = pointingTo_coordonates;
-
-        Arrow.SetPositions(points);
     }
 
     void LabelFaceCamera() 

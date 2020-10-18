@@ -983,6 +983,7 @@ GameObject:
   - component: {fileID: 655855068}
   - component: {fileID: 655855067}
   - component: {fileID: 655855069}
+  - component: {fileID: 655855070}
   m_Layer: 0
   m_Name: InteractionArea
   m_TagString: Untagged
@@ -1037,11 +1038,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca1d72aa45501a44aba9a6050b6ba101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EquationsData: {fileID: 0}
+  react: {fileID: 1323199763}
+  clear: {fileID: 1905947426}
+  EquationsData: {fileID: 11400000, guid: 580d0bdc35a4d584bb759d8218a63816, type: 2}
   WhiteBoardFormula: {fileID: 2542326}
   ChemicalElementsLayer:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &655855070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655855065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fef0033da58f2a4cbb7fd8c97ce334f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &802736120
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,7 +2146,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.6415094, g: 0, b: 0, a: 0.84313726}
     m_HighlightedColor: {r: 0.6431373, g: 0, b: 0, a: 1}
     m_PressedColor: {r: 0.6431373, g: 0, b: 0, a: 0.84313726}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6431373, g: 0, b: 0, a: 0.84313726}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3068,7 +3083,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.0147098955, g: 0, b: 0.5471698, a: 0.84313726}
     m_HighlightedColor: {r: 0.015686275, g: 0, b: 0.54901963, a: 1}
     m_PressedColor: {r: 0.015686275, g: 0, b: 0.54901963, a: 0.84313726}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.015686275, g: 0, b: 0.54901963, a: 0.84313726}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

@@ -13,17 +13,30 @@ public class condensedChemicalElement
 
 public class InteractionAreaController : MonoBehaviour
 {
+    public Button react;
+    public Button clear;
+
     public ChemicalEquations EquationsData;
     public TextMeshProUGUI WhiteBoardFormula;
     public LayerMask ChemicalElementsLayer;
 
+    private bool justReacted;
     private int lengh;
     private condensedChemicalElement[] containedElements = new condensedChemicalElement[100];
+
+    void Start() 
+    {
+        react.onClick.AddListener(() => attemptReaction());
+        clear.onClick.AddListener(() => destroyReactanti());
+    }
 
     // Update is called once per frame
     void Update()
     {
-        updateWhiteBoard ();
+        if (!justReacted)
+        {
+            updateWhiteBoard ();
+        }
     }
 
     void updateWhiteBoard () 
@@ -47,9 +60,70 @@ public class InteractionAreaController : MonoBehaviour
         WhiteBoardFormula.text = reaction;
     }
 
-    void doReaction (int id)
+    void setFormulaWhiteBoard (int id)
+    {
+        string reaction = "";
+
+        ReactionComponent[] reactanti = EquationsData.Equations[id].reactanti;
+        ReactionComponent[] produsi = EquationsData.Equations[id].produsi;
+
+        for (int i = 0; i < reactanti.Length; i++) 
+        {
+            if (reactanti[i].Coefficient > 1) 
+            {
+                reaction = reaction + $"{reactanti[i].Coefficient}({reactanti[i].Element.GetComponent<ChemicalElement>().formula})";
+            }
+            else 
+            {
+                reaction = reaction + $"{reactanti[i].Element.GetComponent<ChemicalElement>().formula}";
+            }
+            
+            if (i != reactanti.Length - 1) reaction = reaction + " + ";
+        }
+
+        reaction = reaction + " -> ";
+
+        for (int i = 0; i < produsi.Length; i++) 
+        {
+            if (produsi[i].Coefficient > 1) 
+            {
+                reaction = reaction + $"{produsi[i].Coefficient}({produsi[i].Element.GetComponent<ChemicalElement>().formula})";
+            }
+            else 
+            {
+                reaction = reaction + $"{produsi[i].Element.GetComponent<ChemicalElement>().formula}";
+            }
+            
+            if (i != produsi.Length - 1) reaction = reaction + " + ";
+        }
+
+        WhiteBoardFormula.text = reaction;
+    } 
+
+    void createProdusi (int id)
     {
 
+    }
+
+    void destroyReactanti ()
+    {
+        List<Collider> elementsInside = this.GetComponent<ColliderContainer>().GetColliders();
+
+        foreach (Collider elementInside in elementsInside) 
+        {
+            if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << elementInside.gameObject.layer)))
+            {
+                Destroy(elementInside.gameObject);
+            }
+        }
+    }
+
+    void doReaction (int id)
+    {
+        justReacted = true;
+        destroyReactanti();
+        createProdusi(id);
+        setFormulaWhiteBoard (id);
     }
 
     bool equivalentFormula (ReactionComponent[] reactanti) 
@@ -57,6 +131,9 @@ public class InteractionAreaController : MonoBehaviour
         float ration = 0;
         int i = 0;
         int j = 0;
+
+        if (reactanti.Length == 0 || lengh == 0) return false;
+        if (reactanti.Length != lengh) return false;
 
         for (i = 0; i < lengh; i++) 
         {
@@ -74,7 +151,7 @@ public class InteractionAreaController : MonoBehaviour
 
             if (OK == true) 
             {
-                float currentRatio = containedElements[i].quantity / reactanti[j].Coefficient;
+                float currentRatio = (float)containedElements[i].quantity / reactanti[j].Coefficient;
 
                 if (ration == 0) 
                 {
@@ -107,7 +184,7 @@ public class InteractionAreaController : MonoBehaviour
         }
     }
 
-    void addChemicalElement (int id, ChemicalElement Element) 
+    void addChemicalElement (int id, GameObject ElementRepresentation) 
     {
         int i = 0;
 
@@ -124,7 +201,7 @@ public class InteractionAreaController : MonoBehaviour
 
         containedElements[lengh].id = id;
         containedElements[lengh].quantity = 1;
-        containedElements[lengh].Element = Element;
+        containedElements[lengh].Element = ElementRepresentation.GetComponent<ChemicalElement>();
 
         lengh++;
     }
@@ -156,7 +233,8 @@ public class InteractionAreaController : MonoBehaviour
     {
         if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obj.gameObject.layer)))
         {
-            addChemicalElement (obj.gameObject.GetComponent<ChemicalElement>().id, obj.gameObject.GetComponent<ChemicalElement>());
+            justReacted = false;
+            addChemicalElement (obj.gameObject.GetComponent<ChemicalElement>().id, obj.gameObject);
         }
     }
 
@@ -164,6 +242,7 @@ public class InteractionAreaController : MonoBehaviour
     {  
         if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obj.gameObject.layer)))
         {
+            justReacted = false;
             removeChemicalElement (obj.gameObject.GetComponent<ChemicalElement>().id);
         }
     }

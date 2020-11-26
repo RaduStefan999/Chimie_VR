@@ -14,13 +14,299 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Equations:
   - reactanti:
-    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+    - Element: {fileID: 1518541955401832367, guid: 5498cb903a47d8b4fa58ca6206377341,
         type: 3}
-      Coefficient: 2
-    - Element: {fileID: 6616474968180855180, guid: b0745560d883a454bb596664f80121a9,
+      Coefficient: 4
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
         type: 3}
       Coefficient: 1
     produsi:
-    - Element: {fileID: 6056073534400049590, guid: 272ccb85c72ac294fb95f5eeab1c6c3f,
+    - Element: {fileID: 3605066775660059782, guid: e2bcb8e8603001e4caf02323af11fe97,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 7716268884790404151, guid: 38d598bef7154244cbff9628a3139554,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 7893653731602570900, guid: 83e6946575e1fa9449c36b8682e23847,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 640156674712831476, guid: 80afc8452d735914f8016ff842d8b294,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 8612665049269980971, guid: 5608eeffe9f39cc41b7144008d8b5311,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 2569886129438227130, guid: 7159a369469982248a70fd2525c35c25,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 5515989287910297186, guid: 0a2a649c7c65ed0419c7853f30de0d9b,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 2865823810582507083, guid: b495d3308b04b7e48a7b50e561d02981,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 2678413312865685534, guid: 0f102ba3290c4ac4aba6b403de3e554f,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 5688519728407737520, guid: 00c97823f1af5494d917582a2309a85e,
+        type: 3}
+      Coefficient: 4
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 3
+    produsi:
+    - Element: {fileID: 1926720210621405421, guid: fcc79d1e73915124c8d2f06b858dbb7b,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 6616474968180855180, guid: b0745560d883a454bb596664f80121a9,
+        type: 3}
+      Coefficient: 3
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 2
+    produsi:
+    - Element: {fileID: 3424742008697954524, guid: 78665309492ec3a4dacdc589369a5442,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 6988444302638568158, guid: bf3697d8430f6f445a59f4f30a6d3259,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 3234733510461519594, guid: c9cb8187cd047474799803f4d7e6f7db,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 5638746195738276216, guid: 92e05dff50b6f0d40bc48ee9e8d04a29,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 5268623997377801194, guid: eb75a723f8972a04e910599e659f1216,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 726541059114651222, guid: b2a7d35a85db5214faffe11d7aecf1c3,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3002882301787004712, guid: 89bc5b358ddc42b46b632bb76dd79dd5,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 8785472498776400926, guid: 94f945008f20d2b48acc6477b011811b,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 7716268884790404151, guid: 38d598bef7154244cbff9628a3139554,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 2030715170829199732, guid: 5a3c13c115a33af43bad9772b820eae0,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 2569886129438227130, guid: 7159a369469982248a70fd2525c35c25,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 2
+    produsi:
+    - Element: {fileID: 8463399793596244395, guid: 908137e32e834fc459743ba0d804bf1e,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 5688519728407737520, guid: 00c97823f1af5494d917582a2309a85e,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 3
+    produsi:
+    - Element: {fileID: 6670146910548684475, guid: ff1a51cbe3e129344923b5ad05bed75e,
+        type: 3}
+      Coefficient: 2
+  - reactanti:
+    - Element: {fileID: 5638746195738276216, guid: 92e05dff50b6f0d40bc48ee9e8d04a29,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 2
+    produsi:
+    - Element: {fileID: 1640403043417753805, guid: 6735c0bfc0a7830458c4632249d02062,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 726541059114651222, guid: b2a7d35a85db5214faffe11d7aecf1c3,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 2
+    produsi:
+    - Element: {fileID: 6054300098306431040, guid: ccedbede820a61f4f9445e3082217811,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 6616474968180855180, guid: b0745560d883a454bb596664f80121a9,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 3
+    produsi:
+    - Element: {fileID: 6432298827095688793, guid: a462223758c73c6498ba5c4b31b9c69a,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 6988444302638568158, guid: bf3697d8430f6f445a59f4f30a6d3259,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 5187129923596103803, guid: 8e4443fd88c337144b3611a5acac7bc6,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 7200134988378007958, guid: 13867d47f07b32847a662629d68682da,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 1867393367687807770, guid: 934849e1ce4bcc24a95eb5d2e6f6649d,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 7200134988378007958, guid: 13867d47f07b32847a662629d68682da,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 3312313907330307969, guid: f7b4c0c6a09844f4b852ff06f5baa57a,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 1867393367687807770, guid: 934849e1ce4bcc24a95eb5d2e6f6649d,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 7716268884790404151, guid: 38d598bef7154244cbff9628a3139554,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 2341758039022437821, guid: de0043b4cc509b24694336574c6ff6fa,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 2865823810582507083, guid: b495d3308b04b7e48a7b50e561d02981,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 748449994858528131, guid: 43a8e02d596ad244cb4a8efeaaee2396,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 5688519728407737520, guid: 00c97823f1af5494d917582a2309a85e,
+        type: 3}
+      Coefficient: 2
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 3
+    produsi:
+    - Element: {fileID: 7449371929228363958, guid: 167012be60e35a741a6744fc86988105,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 5638746195738276216, guid: 92e05dff50b6f0d40bc48ee9e8d04a29,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 4719385255843605649, guid: cdac1ce7affe5894cb5b470b18e1fb38,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 726541059114651222, guid: b2a7d35a85db5214faffe11d7aecf1c3,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 8119518152675914346, guid: 8b42048c012536d4485d4227970c95a4,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 6616474968180855180, guid: b0745560d883a454bb596664f80121a9,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 8328067737641025516, guid: b47fcf801524f5d43b61c47a8d22c65a,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 6988444302638568158, guid: bf3697d8430f6f445a59f4f30a6d3259,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 1502390220720768827, guid: adc244e2197280348b7e4fc4a65e9a9a,
+        type: 3}
+      Coefficient: 1
+  - reactanti:
+    - Element: {fileID: 7200134988378007958, guid: 13867d47f07b32847a662629d68682da,
+        type: 3}
+      Coefficient: 1
+    - Element: {fileID: 5897399549445947792, guid: 2143686c142991443984b09842371e35,
+        type: 3}
+      Coefficient: 1
+    produsi:
+    - Element: {fileID: 2219991903807461, guid: c809c1e586d1bd748926ab3dbb9b7f61,
         type: 3}
       Coefficient: 1

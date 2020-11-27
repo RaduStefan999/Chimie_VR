@@ -7,6 +7,7 @@ using UnityEngine;
 public class ReactionComponent {
     public GameObject Element;
     public int Coefficient;
+    public int id () { return Element.GetComponent<ChemicalElement>().id; }
 }
 
 [System.Serializable]

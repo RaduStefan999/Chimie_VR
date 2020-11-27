@@ -1429,9 +1429,6 @@ MonoBehaviour:
   clear: {fileID: 1905947426}
   EquationsData: {fileID: 11400000, guid: 580d0bdc35a4d584bb759d8218a63816, type: 2}
   WhiteBoardFormula: {fileID: 2542326}
-  ChemicalElementsLayer:
-    serializedVersion: 2
-    m_Bits: 512
 --- !u!114 &655855070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,6 +1441,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fef0033da58f2a4cbb7fd8c97ce334f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChemicalElementsLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!1 &802736120
 GameObject:
   m_ObjectHideFlags: 0

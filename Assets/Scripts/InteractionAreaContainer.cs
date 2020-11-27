@@ -6,7 +6,7 @@ public class InteractionChemicalElement
 {
     public int Coefficient;
     public ChemicalElement Data;
-    public GameObject[] obj;
+    public List<GameObject> objs;
 }
 
 public class InteractionAreaContainer : MonoBehaviour 
@@ -91,18 +91,19 @@ public class InteractionAreaContainer : MonoBehaviour
     {
         foreach (InteractionChemicalElement element in elements)
         {
-            for (int i = 0;  i < element.Coefficient; i++) Destroy(element.obj[i]);
+            foreach (GameObject obj in element.objs) Destroy(obj);
         }
         elements.Clear();
     }
 
-    private void removeElement (ChemicalElement elementData) 
+    private void removeElement (GameObject obj, ChemicalElement elementData) 
     {
         if (elements.Exists(item => item.Data.id == elementData.id))
         {
             InteractionChemicalElement element = elements.Find(item => item.Data.id == elementData.id);
 
             element.Coefficient--;
+            element.objs.Remove(obj);
 
             if (element.Coefficient == 0) elements.RemoveAll(item => item.Data.id == elementData.id);
         }
@@ -115,16 +116,16 @@ public class InteractionAreaContainer : MonoBehaviour
             InteractionChemicalElement element = elements.Find(item => item.Data.id == elementData.id);
 
             element.Coefficient++;
-            element.obj[element.Coefficient - 1] = obj;
+            element.objs.Add(obj);
         }
         else
         {
             InteractionChemicalElement element = new InteractionChemicalElement();
-            element.obj = new GameObject[100];
+            element.objs = new List<GameObject>();
 
             element.Coefficient = 1;
             element.Data = elementData;
-            element.obj[element.Coefficient - 1] = obj;
+            element.objs.Add(obj);
 
             elements.Add(element);
         }
@@ -143,7 +144,7 @@ public class InteractionAreaContainer : MonoBehaviour
     {
         if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obj.gameObject.layer)))
         {
-            removeElement(obj.GetComponent<ChemicalElement>()); 
+            removeElement(obj.gameObject, obj.GetComponent<ChemicalElement>()); 
             this.GetComponent<InteractionAreaController>().contentChanged();
         }
     }

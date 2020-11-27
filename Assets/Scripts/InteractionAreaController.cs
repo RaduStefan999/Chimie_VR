@@ -12,9 +12,11 @@ public class InteractionAreaController : MonoBehaviour
 
     public ChemicalEquations EquationsData;
     public TextMeshProUGUI WhiteBoardFormula;
-    private bool justReacted;
 
+    private int innactiveFrames;
     private InteractionAreaContainer helpers;
+
+    public void contentChanged () { if (innactiveFrames >= 10) innactiveFrames = 0; }
 
     void Start() 
     {
@@ -24,14 +26,12 @@ public class InteractionAreaController : MonoBehaviour
         clear.onClick.AddListener(() => helpers.destroyReactanti());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (!justReacted)
-        {
-            updateWhiteBoard ();
-        }
+        if (innactiveFrames == 0) updateWhiteBoard ();
+        else if (innactiveFrames < 10) innactiveFrames++;
     }
+    
 
     void createProdusi (int id)
     {
@@ -40,10 +40,10 @@ public class InteractionAreaController : MonoBehaviour
 
     void doReaction (int id)
     {
-        justReacted = true;
         helpers.destroyReactanti();
-        createProdusi(id);
+        innactiveFrames = 1;
         setFormulaWhiteBoard (id);
+        createProdusi(id);
     }
 
     void attemptReaction () 
@@ -52,7 +52,7 @@ public class InteractionAreaController : MonoBehaviour
 
         for (i = 0; i < EquationsData.Equations.Length; i++) 
         {
-            if (helpers.CheckEquivalentFormula(EquationsData.Equations[0]) != 0) 
+            if (helpers.CheckEquivalentFormula(EquationsData.Equations[i]) != 0) 
             {
                 doReaction(i);
                 return;

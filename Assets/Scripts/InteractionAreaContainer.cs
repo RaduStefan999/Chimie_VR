@@ -103,6 +103,7 @@ public class InteractionAreaContainer : MonoBehaviour
         if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obj.gameObject.layer)))
         { 
             addElement(obj.gameObject, obj.GetComponent<ChemicalElement>()); 
+            this.GetComponent<InteractionAreaController>().contentChanged();
         }
     }
 
@@ -111,6 +112,7 @@ public class InteractionAreaContainer : MonoBehaviour
         if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obj.gameObject.layer)))
         {
             removeElement(obj.GetComponent<ChemicalElement>()); 
+            this.GetComponent<InteractionAreaController>().contentChanged();
         }
     }
 

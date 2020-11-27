@@ -32,9 +32,9 @@ RenderSettings:
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 10001, guid: 0000000000000000e000000000000000, type: 0}
-  m_DefaultReflectionMode: 0
-  m_DefaultReflectionResolution: 1024
-  m_ReflectionBounces: 2
+  m_DefaultReflectionMode: 1
+  m_DefaultReflectionResolution: 256
+  m_ReflectionBounces: 1
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2016799712}
@@ -56,8 +56,8 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 12
     m_Resolution: 2
-    m_BakeResolution: 40
-    m_AtlasSize: 2048
+    m_BakeResolution: 20
+    m_AtlasSize: 512
     m_AO: 1
     m_AOMaxDistance: 1
     m_CompAOExponent: 1
@@ -66,18 +66,18 @@ LightmapSettings:
     m_Padding: 2
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
-    m_TextureCompression: 1
+    m_TextureCompression: 0
     m_FinalGather: 0
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
-    m_ReflectionCompression: 2
+    m_ReflectionCompression: 0
     m_MixedBakeMode: 0
     m_BakeBackend: 1
     m_PVRSampling: 1
-    m_PVRDirectSampleCount: 32
-    m_PVRSampleCount: 512
-    m_PVRBounces: 2
-    m_PVREnvironmentSampleCount: 256
+    m_PVRDirectSampleCount: 16
+    m_PVRSampleCount: 256
+    m_PVRBounces: 1
+    m_PVREnvironmentSampleCount: 128
     m_PVREnvironmentReferencePointCount: 2048
     m_PVRFilteringMode: 1
     m_PVRDenoiserTypeDirect: 1
@@ -96,7 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
+    m_LightProbeSampleCountMultiplier: 2
   m_LightingDataAsset: {fileID: 112000000, guid: 80c4fa706b9384044a5f0149645b3dad,
     type: 2}
   m_UseShadowmask: 0
@@ -886,10 +886,40 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: -6156861077093087026, guid: e3ec7265894eabf489b3ea3bbb0e596b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6030617267936309834, guid: e3ec7265894eabf489b3ea3bbb0e596b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2076954904362720654, guid: e3ec7265894eabf489b3ea3bbb0e596b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 243041194690276544, guid: e3ec7265894eabf489b3ea3bbb0e596b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e3ec7265894eabf489b3ea3bbb0e596b,
         type: 3}
       propertyPath: m_Name
       value: masa3d
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e3ec7265894eabf489b3ea3bbb0e596b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955853456664853649, guid: e3ec7265894eabf489b3ea3bbb0e596b,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3ec7265894eabf489b3ea3bbb0e596b, type: 3}
@@ -1237,6 +1267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68cb77bc9221ea64eb2bd04c4b366391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68cb77bc9221ea64eb2bd04c4b366391, type: 3}
@@ -1956,6 +1991,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 1973560049306924756, guid: ac1b984f359c6f442856b63598ed0ff7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973560049308874088, guid: ac1b984f359c6f442856b63598ed0ff7,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973560049361317959, guid: ac1b984f359c6f442856b63598ed0ff7,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1973560049363187067, guid: ac1b984f359c6f442856b63598ed0ff7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2045,6 +2095,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1973560050735029954, guid: ac1b984f359c6f442856b63598ed0ff7,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1973560050959673943, guid: ac1b984f359c6f442856b63598ed0ff7,
         type: 3}
@@ -2196,7 +2251,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1022011648}
   m_TextComponent: {fileID: 1881534876}
   m_materialReferenceIndex: 1
@@ -3668,6 +3723,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 68cb77bc9221ea64eb2bd04c4b366391,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68cb77bc9221ea64eb2bd04c4b366391, type: 3}
 --- !u!4 &1691088229 stripped
@@ -4318,7 +4378,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 1.25
+  m_padding: 0
   m_canvasRenderer: {fileID: 1870447011}
   m_TextComponent: {fileID: 1696847891}
   m_materialReferenceIndex: 1
@@ -4638,6 +4698,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2040566759}
     m_Modifications:
+    - target: {fileID: -9003691908145588462, guid: 211502410f024ca47bbcf29e052dc8f8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 211502410f024ca47bbcf29e052dc8f8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4698,10 +4763,25 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 635547659545568360, guid: 211502410f024ca47bbcf29e052dc8f8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 211502410f024ca47bbcf29e052dc8f8,
         type: 3}
       propertyPath: m_Name
       value: biblioteca3d
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 211502410f024ca47bbcf29e052dc8f8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3743019418946121718, guid: 211502410f024ca47bbcf29e052dc8f8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 211502410f024ca47bbcf29e052dc8f8, type: 3}

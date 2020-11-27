@@ -32,18 +32,25 @@ public class InteractionAreaController : MonoBehaviour
         else if (innactiveFrames < 10) innactiveFrames++;
     }
     
-
-    void createProdusi (int id)
+    void createProdusi (int id, int Coefficient)
     {
+        ReactionComponent[] produsi = EquationsData.Equations[id].produsi;
 
+        for (int i = 0; i < produsi.Length; i++)
+        {
+            for (int j = 0; j < produsi[i].Coefficient * Coefficient; j++)
+            {
+                Instantiate(produsi[i].Element, helpers.GetFreeSpot(), Quaternion.Euler(0, 180, 0));
+            }
+        }
     }
 
-    void doReaction (int id)
+    void doReaction (int id, int Coefficient)
     {
         helpers.destroyReactanti();
         innactiveFrames = 1;
-        setFormulaWhiteBoard (id);
-        createProdusi(id);
+        setFormulaWhiteBoard (id, Coefficient);
+        createProdusi(id, Coefficient);
     }
 
     void attemptReaction () 
@@ -52,9 +59,11 @@ public class InteractionAreaController : MonoBehaviour
 
         for (i = 0; i < EquationsData.Equations.Length; i++) 
         {
-            if (helpers.CheckEquivalentFormula(EquationsData.Equations[i]) != 0) 
+            int Coefficient = (int)helpers.CheckEquivalentFormula(EquationsData.Equations[i]);
+
+            if (Coefficient != 0) 
             {
-                doReaction(i);
+                doReaction(i, Coefficient);
                 return;
             }
         }
@@ -86,7 +95,7 @@ public class InteractionAreaController : MonoBehaviour
         WhiteBoardFormula.text = reaction;
     }
 
-    void setFormulaWhiteBoard (int id)
+    void setFormulaWhiteBoard (int id, int Coefficient)
     {
         string reaction = "";
 
@@ -95,9 +104,9 @@ public class InteractionAreaController : MonoBehaviour
 
         for (int i = 0; i < reactanti.Length; i++) 
         {
-            if (reactanti[i].Coefficient > 1) 
+            if (reactanti[i].Coefficient * Coefficient > 1) 
             {
-                reaction = reaction + $"{reactanti[i].Coefficient}({reactanti[i].Element.GetComponent<ChemicalElement>().formula})";
+                reaction = reaction + $"{reactanti[i].Coefficient * Coefficient}({reactanti[i].Element.GetComponent<ChemicalElement>().formula})";
             }
             else 
             {
@@ -111,9 +120,9 @@ public class InteractionAreaController : MonoBehaviour
 
         for (int i = 0; i < produsi.Length; i++) 
         {
-            if (produsi[i].Coefficient > 1) 
+            if (produsi[i].Coefficient*Coefficient > 1) 
             {
-                reaction = reaction + $"{produsi[i].Coefficient}({produsi[i].Element.GetComponent<ChemicalElement>().formula})";
+                reaction = reaction + $"{produsi[i].Coefficient * Coefficient}({produsi[i].Element.GetComponent<ChemicalElement>().formula})";
             }
             else 
             {

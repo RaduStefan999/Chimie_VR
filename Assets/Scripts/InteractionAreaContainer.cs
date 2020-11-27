@@ -16,13 +16,45 @@ public class InteractionAreaContainer : MonoBehaviour
     public List<InteractionChemicalElement> GetElements () { return elements; }
     public float CheckEquivalentFormula (ChemicalEquation Equation) { return equivalentFormula(Equation); }
     public void destroyReactanti () { clearArea(); }
+    public Vector3 GetFreeSpot () { return FreeSpot(); }
 
     // Variables
 
     public LayerMask ChemicalElementsLayer;
+    public Transform SpawnArea;
     private List<InteractionChemicalElement> elements = new List<InteractionChemicalElement>();
 
     // Mothodes
+
+    private Vector3 FreeSpot ()
+    {
+        Vector3 corner = new Vector3(SpawnArea.position.x + SpawnArea.localScale.x/2, SpawnArea.position.y - SpawnArea.localScale.y/2, SpawnArea.position.z + SpawnArea.localScale.z/2);
+
+        for (int y = 0; y < SpawnArea.localScale.y; y++)
+        {
+            for (int z = 0; z < SpawnArea.localScale.z; z++)
+            {
+                for (int x = 0; x < SpawnArea.localScale.z; x++)
+                {
+                    Vector3 spot = new Vector3(corner.x - x, corner.y + y, corner.z - z);
+
+                    bool Clear = true;
+
+                    foreach (Collider obstacle in Physics.OverlapSphere(spot, 0.5f))
+                    {
+                        if (ChemicalElementsLayer == (ChemicalElementsLayer | (1 << obstacle.gameObject.layer)))
+                        {
+                            Clear = false;
+                        }
+                    }
+
+                    if (Clear) return spot;
+                }
+            }
+        }
+
+        return corner;
+    }
 
     private float equivalentFormula (ChemicalEquation Equation) 
     {

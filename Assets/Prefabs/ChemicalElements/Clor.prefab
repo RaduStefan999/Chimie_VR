@@ -229,8 +229,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 13
   nume: Clor
-  formula: Cl
+  formula: Cl2
   elementdName: {fileID: 1023541970010085339}
+  isDisplay: 0
 --- !u!114 &4593199673933329752
 MonoBehaviour:
   m_ObjectHideFlags: 0
